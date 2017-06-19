@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="shain.ypt.com.plmarquee.ShowActivity">
+
+
+
+     <TextView
+         android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:text="@string/qq_878586063"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:focusableInTouchMode="true"
+        android:textSize="800px"
+        android:textColor="@color/title_bg"
+        android:layout_height="match_parent" />
+
+
+
+
+
+</LinearLayout>
+
+
+
+

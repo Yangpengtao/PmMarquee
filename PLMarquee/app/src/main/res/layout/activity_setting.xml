@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="shain.ypt.com.plmarquee.SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/title_bg"
+        android:layout_height="@dimen/dp_48">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp_22"
+            android:textColor="@android:color/white"
+            android:text="@string/setting_marquee"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="match_parent"
+        android:textColorHint="@color/color999"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:hint="@string/your_want_show_text"
+        android:text=""  />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@color/color999"
+        ></View>
+
+    <CheckBox
+        android:id="@+id/cbBold"
+        android:layout_width="wrap_content"
+        android:text="加粗"
+        android:textColor="@color/color666"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/cbItalic"
+        android:layout_width="wrap_content"
+        android:text="斜体"
+        android:textColor="@color/color666"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/cbUnderline"
+        android:layout_width="wrap_content"
+        android:text="下划线"
+        android:textColor="@color/color666"
+        android:layout_height="wrap_content" />
+
+
+
+    <Button
+        android:id="@+id/btSubmit"
+        android:text="@string/submit"
+        android:layout_width="match_parent"
+        android:background="@color/title_bg"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40" />
+
+
+</LinearLayout>
