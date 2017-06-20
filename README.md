@@ -9,5 +9,5 @@
  
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_2.gif)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_1.png)
-![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/iamge_2.png)
+![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_2.png)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_3.gif)
