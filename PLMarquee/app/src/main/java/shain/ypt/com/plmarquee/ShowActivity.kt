@@ -4,14 +4,26 @@ import android.graphics.Paint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_show.*
 
+/**
+ * 跑马灯页面
+ * yang 博客：blog.csdn.net/qq_16965811
+ */
 class ShowActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
+        //设置全屏
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
+        //配置跑马灯参数  开始
+        var bgColor:Int = intent.getIntExtra(SettingActivity.BG_COLOR,R.color.color000000)
+        var fontColor:Int =intent.getIntExtra(SettingActivity.FONT_COLOR,R.color.title_bg)
+        textView.setTextColor(this.resources.getColor(fontColor))
+        textView.setBackgroundColor(this.resources.getColor(bgColor))
         if (!intent.getStringExtra(SettingActivity.TEXT_VALUE).toString().equals(""))
             textView.text = intent.getStringExtra(SettingActivity.TEXT_VALUE).toString()
         if(intent.getBooleanExtra(SettingActivity.IS_UNDERLINE,false))
@@ -24,6 +36,7 @@ class ShowActivity : AppCompatActivity() {
             if (intent.getBooleanExtra(SettingActivity.IS_ITALIC,false))
                 textView.typeface= Typeface.defaultFromStyle(Typeface.ITALIC )
         }
+        //配置跑马灯参数  结束
 
     }
 }

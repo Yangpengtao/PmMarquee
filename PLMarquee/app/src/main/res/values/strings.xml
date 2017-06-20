@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">PLMarquee</string>
+    <string name="app_name">屏幕跑马灯</string>
     <string name="qq_878586063">出问题，请联系QQ:878586063</string>
     <string name="your_want_show_text">添加你要显示的文字</string>
     <string name="setting_marquee">跑马灯设置</string>
     <string name="submit">提交</string>
+    <string name="font_color">文字颜色</string>
+    <string name="bg_color">背景颜色</string>
+    <string name="add_expression">添加表情</string>
 </resources>

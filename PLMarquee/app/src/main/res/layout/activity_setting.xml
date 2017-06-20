@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/colorcdcdcd"
     android:orientation="vertical"
+    android:focusableInTouchMode="true"
     tools:context="shain.ypt.com.plmarquee.SettingActivity">
 
     <RelativeLayout
@@ -26,41 +27,59 @@
         android:layout_width="match_parent"
         android:textColorHint="@color/color999"
         android:padding="8dp"
+        android:maxLines="1"
+        android:maxLength="25"
+        android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
         android:layout_height="40dp"
         android:background="@android:color/white"
         android:hint="@string/your_want_show_text"
         android:text=""  />
 
-    <View
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginBottom="@dimen/dp_10"
-        android:background="@color/color999"
-        ></View>
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="@dimen/dp_2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cbBold"
+            android:text="加粗"
+            style="@style/settingCheckBoxStyle" />
+        <CheckBox
+            android:id="@+id/cbItalic"
+            android:text="斜体"
+            style="@style/settingCheckBoxStyle" />
 
-    <CheckBox
-        android:id="@+id/cbBold"
-        android:layout_width="wrap_content"
-        android:text="加粗"
-        android:textColor="@color/color666"
-        android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cbUnderline"
+            android:text="下划线"
+            style="@style/settingCheckBoxStyle" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvAddExpression"
+        android:text="@string/add_expression"
+        style="@style/textViewBtn" />
 
-    <CheckBox
-        android:id="@+id/cbItalic"
-        android:layout_width="wrap_content"
-        android:text="斜体"
-        android:textColor="@color/color666"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvFontColor"
+        android:text="@string/font_color"
+        style="@style/textViewBtn"/>
 
-    <CheckBox
-        android:id="@+id/cbUnderline"
-        android:layout_width="wrap_content"
-        android:text="下划线"
-        android:textColor="@color/color666"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvBgColor"
+        android:text="@string/bg_color"
+        style="@style/textViewBtn" />
 
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_2"
+        android:background="@android:color/white"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/btSubmit"
@@ -68,7 +87,6 @@
         android:layout_width="match_parent"
         android:background="@color/title_bg"
         android:layout_gravity="bottom"
-        android:layout_marginTop="@dimen/dp_40"
         android:layout_height="@dimen/dp_40" />
 
 

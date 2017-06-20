@@ -12,6 +12,7 @@ import android.view.WindowManager
 /**
  * 获得屏幕相关的辅助类
  * Yang pengtao
+ * yang 博客：blog.csdn.net/qq_16965811
  */
 class ScreenUtils private constructor() {
     init {

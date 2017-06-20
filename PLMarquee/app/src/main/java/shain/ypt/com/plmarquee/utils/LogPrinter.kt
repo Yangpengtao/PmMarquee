@@ -5,6 +5,7 @@ import android.util.Log
 /**
  * 日志输出类，统一管理日志输出
  * Yang pengtao
+ * yang 博客：blog.csdn.net/qq_16965811
  */
 object LogPrinter {
     private val TAG = "KoucloTown Log->>"

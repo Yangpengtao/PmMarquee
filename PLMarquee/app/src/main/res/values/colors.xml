@@ -5,6 +5,40 @@
     <color name="colorAccent">#FF4081</color>
     <color name="title_bg">#ff4081</color>
     <color name="color666">#666666</color>
+    <color name="colorcdcdcd">#dfdfdf</color>
     <color name="color999">#999999</color>
 
+    <!--颜色选色表 开始-->
+    <color name="colorff0000">#ff0000</color>
+    <color name="color999933">#999933</color>
+    <color name="colorffffcc">#ffffcc</color>
+
+    <color name="colorcc99cc">#cc99cc</color>
+    <color name="colorcc9966">#cc9966</color>
+    <color name="colorccccff">#ccccff</color>
+
+    <color name="color996699">#996699</color>
+    <color name="colorcccc33">#cccc33</color>
+    <color name="colorff99cc">#ff99cc</color>
+
+    <color name="colorff6666">#ff6666</color>
+    <color name="colorffff00">#ffff00</color>
+    <color name="color66cc99">#66cc99</color>
+
+    <color name="colorccff00">#ccff00</color>
+    <color name="color6699ff">#6699ff</color>
+    <color name="colorcccccc">#cccccc</color>
+
+    <color name="colorffcccc">#ffcccc</color>
+    <color name="colorfffff">#ffffff</color>
+    <color name="color00ff00">#00ff00</color>
+
+    <color name="color000000">#000000</color>
+    <color name="color003366">#003366</color>
+    <color name="color333333">#333333</color>
+
+    <color name="color003399">#003399</color>
+    <color name="color333000">#333000</color>
+    <color name="colorFFFAFA">#FFFAFA</color>
+    <!--颜色选色表 结束-->
 </resources>
