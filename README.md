@@ -7,6 +7,7 @@
    - 优化布局<br/>
    - 适当添加备注<br/>
  
+ 
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_2.gif)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_1.png)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_2.png)
