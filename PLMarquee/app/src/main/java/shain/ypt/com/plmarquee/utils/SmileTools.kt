@@ -14,12 +14,18 @@ import java.util.regex.Pattern
  */
 object SmileTools {
 
+    //根据密度取图片的大小值，即：当屏幕density=1 的时候
+    val DEFAULT_SMALL_SIZE:Int = 25
+    val DEFAULT_LARGE_SIZE:Int = 250
+
     private val spannableFactory = Spannable.Factory
             .getInstance()
 
+    //存放表情和key值的集合
      var emoticons = HashMap<Pattern, Int>()
     var  emoticonsKey = mutableListOf<String>()
 
+    //定义表情相对的符号
     val f_static_00 = "[):0]"
     val f_static_01 = "[):]"
     val f_static_02 = "[:D]"
@@ -171,6 +177,7 @@ object SmileTools {
      * *
      * @param spannable
      * *
+     * @small 是否为小图，文本框和展示设置不同大小表情图
      * @return
      */
     fun addSmiles(context: Context, spannable: Spannable,small:Boolean): Boolean {
@@ -191,10 +198,11 @@ object SmileTools {
                     hasChanges = true
                     val drawable = context.resources.getDrawable(
                             value)
-                    if (!small)
-                        drawable.setBounds(0, 0, 80,80)// 这里设置图片的大小
-                    else
-                        drawable.setBounds(0,0,800,800)
+                    val density: Int = context.resources.displayMetrics.density.toInt()
+                    if (!small) {
+                        drawable.setBounds(0, 0, DEFAULT_SMALL_SIZE * density, DEFAULT_SMALL_SIZE * density)// 这里设置图片的大小
+                    }else
+                        drawable.setBounds(0,0, DEFAULT_LARGE_SIZE*density,DEFAULT_LARGE_SIZE*density  )
                     val imageSpan = ImageSpan(drawable,
                             ImageSpan.ALIGN_BOTTOM)
                     spannable.setSpan(imageSpan, matcher.start(),

@@ -6,7 +6,7 @@
     android:background="@color/colorcdcdcd"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
-    tools:context="shain.ypt.com.plmarquee.SettingActivity">
+    tools:context="shain.ypt.com.plmarquee.activity.SettingActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,6 +28,9 @@
         android:textColorHint="@color/color999"
         android:padding="8dp"
         android:maxLines="1"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:selectAllOnFocus="true"
         android:maxLength="60"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/black"

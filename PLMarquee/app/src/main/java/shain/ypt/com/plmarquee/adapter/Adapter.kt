@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import shain.ypt.com.plmarquee.R
-import shain.ypt.com.plmarquee.SettingActivity
+import shain.ypt.com.plmarquee.activity.SettingActivity
 import shain.ypt.com.plmarquee.utils.SmileTools
 import shain.ypt.com.plmarquee.utils.getColor
 
@@ -64,7 +64,7 @@ class Adapter(private val mContext: Context, private var mTextView: TextView,pri
     override fun getItemCount(): Int {
         if (IS_NULL == 1){
             //字体颜色和背景颜色
-            if (SettingActivity.CURR_SET==1||SettingActivity.CURR_SET==2){
+            if (SettingActivity.CURR_SET==1|| SettingActivity.CURR_SET==2){
                 return getColor().size
             }else{
                 //表情

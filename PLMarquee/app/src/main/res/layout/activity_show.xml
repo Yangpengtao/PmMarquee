@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="shain.ypt.com.plmarquee.ShowActivity">
+    tools:context="shain.ypt.com.plmarquee.activity.ShowActivity">
 
 
 
      <TextView
-         android:id="@+id/textView"
-        android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:text="@string/qq_878586063"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:singleLine="true"
-        android:maxLines="1"
-        android:focusableInTouchMode="true"
-        android:textSize="800px"
-        android:textColor="@color/title_bg"
+          android:id="@+id/textView"
+          android:layout_width="match_parent"
+          android:gravity="center_vertical"
+          android:layout_height="match_parent"
+          android:text="@string/qq_878586063"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:ellipsize="marquee"
+          android:focusable="true"
+          android:scrollHorizontally="true"
+          android:singleLine="true"
+          android:maxLines="1"
+          android:focusableInTouchMode="true"
+          android:textSize="800px"
+          android:textColor="@color/title_bg"
         />
 
 

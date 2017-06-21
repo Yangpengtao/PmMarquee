@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.widget.TextView
+import shain.ypt.com.plmarquee.utils.LogPrinter
 
 /**
  * 跑马灯view
@@ -31,6 +32,11 @@ class MarqueeTextView : TextView {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
+        LogPrinter.e(TAG,"----")
+    }
+
+    override fun isFocused(): Boolean {
+        return true
     }
 
     override fun onTextChanged(text: CharSequence?, start: Int, lengthBefore: Int, lengthAfter: Int) {
