@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/parent"
+    android:gravity="center"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="50dp">
 
@@ -8,5 +9,6 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:visibility="gone"
+        android:textSize="@dimen/sp_22"
         android:layout_height="wrap_content" />
 </LinearLayout>

@@ -5,17 +5,20 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import shain.ypt.com.plmarquee.R
 import shain.ypt.com.plmarquee.SettingActivity
+import shain.ypt.com.plmarquee.utils.SmileTools
 import shain.ypt.com.plmarquee.utils.getColor
+
 
 /**
  * Created by yang on 2017/6/20.
  * yang 博客：blog.csdn.net/qq_16965811
  */
-class Adapter(private val mContext: Context, private val mTextView: TextView) : RecyclerView.Adapter<Adapter.ViewHolder>(), View.OnClickListener {
+class Adapter(private val mContext: Context, private var mTextView: TextView,private var mEtText:EditText) : RecyclerView.Adapter<Adapter.ViewHolder>(), View.OnClickListener {
 
     private val TAG = "Adapter"
 
@@ -39,23 +42,36 @@ class Adapter(private val mContext: Context, private val mTextView: TextView) : 
                 //SET_FONT_COLOR
             2 -> {
                 //SET_BG_COLOR
+                holder.mTextView.visibility = View.GONE
                 holder.parent.setBackgroundColor(mContext.resources.getColor(getColor()[position]))
                 holder.parent.tag = getColor()[position]
             }
-            3 ->
+            3 -> {
                 //SET_EXPRESSION
-                holder.mTextView.setTextColor(mContext.resources.getColor(getColor()[position]))
-            else -> {
+                holder.mTextView.visibility = View.VISIBLE
+                var smile:String = SmileTools.emoticonsKey[position]
+                val span = SmileTools
+                        .getSmiledText(mContext,smile ,false)
+                // 设置内容
+                holder.mTextView.setText(span, TextView.BufferType.SPANNABLE)
+                holder.parent.tag = smile
+            }else -> {
             }
         }
         holder.parent.setOnClickListener(this)
     }
 
     override fun getItemCount(): Int {
-        if (IS_NULL == 1)
-            return getColor().size
-        else
-            return 0
+        if (IS_NULL == 1){
+            //字体颜色和背景颜色
+            if (SettingActivity.CURR_SET==1||SettingActivity.CURR_SET==2){
+                return getColor().size
+            }else{
+                //表情
+               return SmileTools.emoticons.size
+            }
+
+        }else return 0
 
     }
 
@@ -64,13 +80,25 @@ class Adapter(private val mContext: Context, private val mTextView: TextView) : 
         //设置字体和背景颜色
         if (SettingActivity.CURR_SET == 1 || SettingActivity.CURR_SET == 2) {
             val color = v.tag as Int
+            if (mTextView==null) return
             mTextView.setTextColor(mContext.resources.getColor(color))
             mTextView.tag = color
         } else {
             //设置表情
+            if (mEtText==null) return
+            var smileStr = v.tag.toString()
+            setSmile(smileStr)
+
 
         }
         clear()
+    }
+
+
+    //设置表情
+    private fun setSmile(smileStr:String) {
+//        ToastUtil.show(mContext,smileStr)
+         mEtText.append(SmileTools.getSmiledText(mContext,smileStr,false))
     }
 
 

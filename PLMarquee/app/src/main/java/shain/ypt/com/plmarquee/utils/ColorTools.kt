@@ -3,6 +3,7 @@ package shain.ypt.com.plmarquee.utils
 import shain.ypt.com.plmarquee.R
 
 /**
+ * 颜色加载类
  * Created by yang on 2017/6/20.
  * yang 博客：blog.csdn.net/qq_16965811
  */

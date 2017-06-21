@@ -6,11 +6,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_setting.*
 import shain.ypt.com.plmarquee.adapter.Adapter
-import shain.ypt.com.plmarquee.adapter.ItemSpace
+import shain.ypt.com.plmarquee.myview.ItemSpace
 import shain.ypt.com.plmarquee.utils.ToastUtil
 
 /**
@@ -81,15 +82,15 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener  {
         when (v.id) {
             R.id.tvBgColor -> {
                 CURR_SET = SET_BG_COLOR
-                selectColor(tvBgColor)
+                showGrid(tvBgColor,etText)
             }
             R.id.tvFontColor -> {
                 CURR_SET= SET_FONT_COLOR
-                selectColor(tvFontColor)
+                showGrid(tvFontColor,etText)
             }
             R.id.tvAddExpression -> {
                 CURR_SET = SET_EXPRESSION
-                selectExpression()
+                showGrid(tvFontColor,etText)
             }
             R.id.btSubmit ->
                 if (etText!!.text != null)
@@ -109,8 +110,8 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener  {
     /**
      * 选择颜色
      */
-    private fun  selectColor(textView: TextView) {
-        adapter  =Adapter(this,textView)
+    private fun  showGrid(textView: TextView?,etText:EditText?) {
+        adapter  =Adapter(this, textView!!, etText!!)
         mRecyclerView.layoutManager=mGridManager
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.adapter =adapter
