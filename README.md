@@ -6,9 +6,11 @@
    - 添加可选背景和字体颜色<br/>
    - 优化布局<br/>
    - 适当添加备注<br/>
+   
+### version1.2
+ -添加表情功能
  
  
-![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_2.gif)
-![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_1.png)
-![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/image_2.png)
-![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_3.gif)
+![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_4.gif)
+![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_5.gif)
+
