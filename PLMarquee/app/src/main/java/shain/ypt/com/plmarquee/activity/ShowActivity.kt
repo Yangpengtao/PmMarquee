@@ -47,7 +47,7 @@ class ShowActivity : AppCompatActivity() {
         if(!TextUtils.isEmpty(textView.text)){
             if (!textView.text.contains("[")&&!textView.text.contains("]")) return
             val span = SmileTools.getSmiledText(this, textView.text, true)
-            // 设置内容
+            // 设置内容，有的机型span和marquee有冲突。改为NORMAL就好了
              textView.setText(span, TextView.BufferType.NORMAL)
         }
         //文字大小适配一下
