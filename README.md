@@ -15,7 +15,7 @@
   ### version1.4
  - 解决部分机型跑马灯效果没有滚动
  
-
+已经 上线应用宝 ->搜索（屏幕跑马灯）
  
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_4.gif)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_5.gif)
