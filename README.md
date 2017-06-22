@@ -15,7 +15,7 @@
   ### version1.4
  - 解决部分机型跑马灯效果没有滚动
  
- <br/>部分机型跑马灯没有效果，待解决
+
  
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_4.gif)
 ![](https://github.com/Yangpengtao/PmMarquee/blob/master/drawable/show_5.gif)
