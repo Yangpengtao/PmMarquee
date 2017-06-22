@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_setting.*
 import shain.ypt.com.plmarquee.R
 import shain.ypt.com.plmarquee.adapter.Adapter
 import shain.ypt.com.plmarquee.myview.ItemSpace
@@ -62,17 +63,17 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
      */
     private fun init() {
         mGridManager = GridLayoutManager(this,6)
-        kotlinx.android.synthetic.main.activity_setting.mRecyclerView.addItemDecoration(ItemSpace(4))
+         mRecyclerView.addItemDecoration(ItemSpace(4))
     }
 
     /**
      * 添加点击监听
      */
     private fun setListener() {
-        kotlinx.android.synthetic.main.activity_setting.btSubmit!!.setOnClickListener(this)
-        kotlinx.android.synthetic.main.activity_setting.tvAddExpression!!.setOnClickListener(this)
-        kotlinx.android.synthetic.main.activity_setting.tvBgColor!!.setOnClickListener(this)
-        kotlinx.android.synthetic.main.activity_setting.tvFontColor!!.setOnClickListener(this)
+         btSubmit!!.setOnClickListener(this)
+         tvAddExpression!!.setOnClickListener(this)
+         tvBgColor!!.setOnClickListener(this)
+         tvFontColor!!.setOnClickListener(this)
     }
 
     /**
@@ -82,19 +83,19 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
         when (v.id) {
             R.id.tvBgColor -> {
                 CURR_SET = SET_BG_COLOR
-                showGrid(kotlinx.android.synthetic.main.activity_setting.tvBgColor, kotlinx.android.synthetic.main.activity_setting.etText)
+                showGrid(tvBgColor, etText)
             }
             R.id.tvFontColor -> {
                 CURR_SET = SET_FONT_COLOR
-                showGrid(kotlinx.android.synthetic.main.activity_setting.tvFontColor, kotlinx.android.synthetic.main.activity_setting.etText)
+                showGrid(tvFontColor, etText)
             }
             R.id.tvAddExpression -> {
                 CURR_SET = SET_EXPRESSION
-                showGrid(kotlinx.android.synthetic.main.activity_setting.tvFontColor, kotlinx.android.synthetic.main.activity_setting.etText)
+                showGrid(tvFontColor, etText)
             }
             R.id.btSubmit ->
-                if (kotlinx.android.synthetic.main.activity_setting.etText!!.text != null)
-                    showMarquee(kotlinx.android.synthetic.main.activity_setting.etText!!.text.toString())
+                if (etText!!.text != null)
+                    showMarquee(etText!!.text.toString())
             else
                 Toast.makeText(this@SettingActivity, "", Toast.LENGTH_SHORT).show()
         }
@@ -112,9 +113,9 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
      */
     private fun  showGrid(textView: TextView?, etText: EditText?) {
         adapter  = Adapter(this, textView!!, etText!!)
-        kotlinx.android.synthetic.main.activity_setting.mRecyclerView.layoutManager=mGridManager
-        kotlinx.android.synthetic.main.activity_setting.mRecyclerView.setHasFixedSize(true)
-        kotlinx.android.synthetic.main.activity_setting.mRecyclerView.adapter =adapter
+        mRecyclerView.layoutManager=mGridManager
+        mRecyclerView.setHasFixedSize(true)
+        mRecyclerView.adapter =adapter
     }
 
     /**
@@ -123,15 +124,15 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
     private fun showMarquee(text: String?) {
         val intent = Intent(this@SettingActivity, ShowActivity::class.java)
         intent.putExtra(TEXT_VALUE, text)
-        intent.putExtra(IS_BOLD, kotlinx.android.synthetic.main.activity_setting.cbBold.isChecked)
-        intent.putExtra(IS_ITALIC, kotlinx.android.synthetic.main.activity_setting.cbItalic.isChecked)
-        intent.putExtra(IS_UNDERLINE, kotlinx.android.synthetic.main.activity_setting.cbUnderline.isChecked)
-        if(kotlinx.android.synthetic.main.activity_setting.tvBgColor.tag!=null){
-            val color:Int = kotlinx.android.synthetic.main.activity_setting.tvFontColor.tag as Int
+        intent.putExtra(IS_BOLD, cbBold.isChecked)
+        intent.putExtra(IS_ITALIC, cbItalic.isChecked)
+        intent.putExtra(IS_UNDERLINE,cbUnderline.isChecked)
+        if(tvBgColor.tag!=null){
+            val color:Int = tvFontColor.tag as Int
             intent.putExtra(FONT_COLOR,color)
         }
-        if(kotlinx.android.synthetic.main.activity_setting.tvBgColor.tag!=null){
-            val color:Int = kotlinx.android.synthetic.main.activity_setting.tvBgColor.tag as Int
+        if(tvBgColor.tag!=null){
+            val color:Int = tvBgColor.tag as Int
             intent.putExtra(BG_COLOR,color)
         }
         startActivity(intent)

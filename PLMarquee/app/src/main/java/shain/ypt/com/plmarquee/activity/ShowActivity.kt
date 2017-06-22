@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_show.*
 import shain.ypt.com.plmarquee.R
-import shain.ypt.com.plmarquee.activity.SettingActivity
 import shain.ypt.com.plmarquee.utils.SmileTools
 
 
@@ -18,7 +17,7 @@ import shain.ypt.com.plmarquee.utils.SmileTools
  * yang 博客：blog.csdn.net/qq_16965811
  */
 class ShowActivity : AppCompatActivity() {
-
+    //密度1：1 默认字体
     val DEFAULT_SIZE:Int = 90
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,29 +29,29 @@ class ShowActivity : AppCompatActivity() {
         //--------配置跑马灯参数  开始
         var bgColor:Int = intent.getIntExtra(SettingActivity.BG_COLOR, R.color.color000000)
         var fontColor:Int =intent.getIntExtra(SettingActivity.FONT_COLOR, R.color.title_bg)
-        kotlinx.android.synthetic.main.activity_show.textView.setTextColor(this.resources.getColor(fontColor))
-        kotlinx.android.synthetic.main.activity_show.textView.setBackgroundColor(this.resources.getColor(bgColor))
+        textView.setTextColor(this.resources.getColor(fontColor))
+        textView.setBackgroundColor(this.resources.getColor(bgColor))
         if(intent.getBooleanExtra(SettingActivity.IS_UNDERLINE,false))
-            kotlinx.android.synthetic.main.activity_show.textView.paint.flags= Paint.UNDERLINE_TEXT_FLAG
+            textView.paint.flags= Paint.UNDERLINE_TEXT_FLAG
         if (intent.getBooleanExtra(SettingActivity.IS_BOLD,false)&&intent.getBooleanExtra(SettingActivity.IS_ITALIC,false)){
-            kotlinx.android.synthetic.main.activity_show.textView.typeface= Typeface.defaultFromStyle(Typeface.BOLD_ITALIC )
+            textView.typeface= Typeface.defaultFromStyle(Typeface.BOLD_ITALIC )
         }else{
             if (intent.getBooleanExtra(SettingActivity.IS_BOLD,false))
-                kotlinx.android.synthetic.main.activity_show.textView.typeface= Typeface.defaultFromStyle(Typeface.BOLD )
+               textView.typeface= Typeface.defaultFromStyle(Typeface.BOLD )
             if (intent.getBooleanExtra(SettingActivity.IS_ITALIC,false))
-                kotlinx.android.synthetic.main.activity_show.textView.typeface= Typeface.defaultFromStyle(Typeface.ITALIC )
+                textView.typeface= Typeface.defaultFromStyle(Typeface.ITALIC )
         }
         if (!intent.getStringExtra(SettingActivity.TEXT_VALUE).toString().equals(""))
-            kotlinx.android.synthetic.main.activity_show.textView.text = intent.getStringExtra(SettingActivity.TEXT_VALUE).toString()
+            textView.text = intent.getStringExtra(SettingActivity.TEXT_VALUE).toString()
         //把特殊字符改为表情显示
-        if(!TextUtils.isEmpty(kotlinx.android.synthetic.main.activity_show.textView.text)){
+        if(!TextUtils.isEmpty(textView.text)){
+            if (!textView.text.contains("[")&&!textView.text.contains("]")) return
             val span = SmileTools.getSmiledText(this, textView.text, true)
             // 设置内容
-             kotlinx.android.synthetic.main.activity_show.textView.setText(span, TextView.BufferType.SPANNABLE)
-
+             textView.setText(span, TextView.BufferType.NORMAL)
         }
         //文字大小适配一下
-        kotlinx.android.synthetic.main.activity_show.textView.textSize = DEFAULT_SIZE * resources.displayMetrics.density
+        textView.textSize = DEFAULT_SIZE * resources.displayMetrics.density
         //-------配置跑马灯参数  结束
 
     }

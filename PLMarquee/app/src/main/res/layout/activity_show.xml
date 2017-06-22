@@ -17,7 +17,6 @@
           android:marqueeRepeatLimit="marquee_forever"
           android:ellipsize="marquee"
           android:focusable="true"
-          android:scrollHorizontally="true"
           android:singleLine="true"
           android:maxLines="1"
           android:focusableInTouchMode="true"

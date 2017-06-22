@@ -29,8 +29,6 @@
         android:padding="8dp"
         android:maxLines="1"
         android:singleLine="true"
-        android:textIsSelectable="true"
-        android:selectAllOnFocus="true"
         android:maxLength="60"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
